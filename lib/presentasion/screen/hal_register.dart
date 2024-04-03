@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:data_kontak/controller/kontak_controller.dart';
-import 'package:data_kontak/model/kontak_model.dart';
+import 'package:data_kontak/presentasion/controller/kontak_controller.dart';
+import 'package:data_kontak/domain/model/kontak_model.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

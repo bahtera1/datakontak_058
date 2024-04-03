@@ -1,8 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:data_kontak/model/kontak_model.dart';
-import 'package:data_kontak/service/kontak_service.dart';
+import 'package:data_kontak/data/services/kontak_service.dart';
+import 'package:data_kontak/domain/model/kontak.dart';
+import 'package:data_kontak/domain/model/person.dart';
+import 'package:data_kontak/domain/model/person_model.dart';
+import 'package:data_kontak/data/service/kontak_service.dart';
 
 class KontakController {
   final KontakService kontakService = KontakService();
@@ -12,7 +15,7 @@ class KontakController {
       'nama': person.nama,
       'email': person.email,
       'alamat': person.alamat,
-      'no_telepon': person.telepon,
+      'no_telepon': person.noTelepon,
     };
 
     try {

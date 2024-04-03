@@ -1,4 +1,4 @@
-import 'package:data_kontak/screen/home_view.dart';
+import 'package:data_kontak/presentasion/screen/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
