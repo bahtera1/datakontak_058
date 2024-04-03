@@ -5,7 +5,7 @@ import 'package:data_kontak/model/kontak_model.dart';
 import 'package:data_kontak/service/kontak_service.dart';
 
 class KontakController {
-  final kontakService = KontakService();
+  final KontakService kontakService = KontakService();
 
   Future<Map<String, dynamic>> addPerson(Kontak person, File? file) async {
     Map<String, String> data = {
@@ -24,6 +24,7 @@ class KontakController {
           'message': 'Data berhasil disimpan',
         };
       } else {
+        // Penanganan ketika Content-Type bukan application/json
         if (response.headers['content-type']!.contains('application/json')) {
           var decodedJson = jsonDecode(response.body);
           return {
@@ -31,16 +32,19 @@ class KontakController {
             'message': decodedJson['message'] ?? 'Terjadi kesalahan',
           };
         }
-
         var decodedJson = jsonDecode(response.body);
         return {
           'success': false,
           'message':
-              decodedJson['message'] ?? 'Terjadi kesalahan saat menyimpan data'
+              decodedJson['message'] ?? 'Terjadi kesalahan saat menyimpan data',
         };
       }
     } catch (e) {
-      return {"success": false, "message": 'Terjadi kesalahan: $e'};
+      // Menangkap kesalahan jaringan atau saat decoding JSON
+      return {
+        'success': false,
+        'message': 'Terjadi kesalahan: $e',
+      };
     }
   }
 
