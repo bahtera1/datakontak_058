@@ -1,16 +1,16 @@
 import 'dart:convert';
 
 class Kontak {
-  final String nama;
-  final String email;
-  final String alamat;
-  final String telepon;
-  final String foto;
+  String nama;
+  String email;
+  String alamat;
+  String noTelepon;
+  String foto;
   Kontak({
     required this.nama,
     required this.email,
     required this.alamat,
-    required this.telepon,
+    required this.noTelepon,
     required this.foto,
   });
 
@@ -18,58 +18,56 @@ class Kontak {
     String? nama,
     String? email,
     String? alamat,
-    String? telepon,
+    String? noTelepon,
     String? foto,
   }) {
     return Kontak(
       nama: nama ?? this.nama,
       email: email ?? this.email,
       alamat: alamat ?? this.alamat,
-      telepon: telepon ?? this.telepon,
+      noTelepon: noTelepon ?? this.noTelepon,
       foto: foto ?? this.foto,
     );
   }
 
   Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
-
-    result.addAll({'nama': nama});
-    result.addAll({'email': email});
-    result.addAll({'alamat': alamat});
-    result.addAll({'telepon': telepon});
-    result.addAll({'foto': foto});
-
-    return result;
+    return <String, dynamic>{
+      'nama': nama,
+      'email': email,
+      'alamat': alamat,
+      'noTelepon': noTelepon,
+      'foto': foto,
+    };
   }
 
   factory Kontak.fromMap(Map<String, dynamic> map) {
     return Kontak(
-      nama: map['nama'] ?? '',
-      email: map['email'] ?? '',
-      alamat: map['alamat'] ?? '',
-      telepon: map['telepon'] ?? '',
-      foto: map['foto'] ?? '',
+      nama: map['nama'] as String,
+      email: map['email'] as String,
+      alamat: map['alamat'] as String,
+      noTelepon: map['noTelepon'] as String,
+      foto: map['foto'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Kontak.fromJson(String source) => Kontak.fromMap(json.decode(source));
+  factory Kontak.fromJson(String source) =>
+      Kontak.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'Kontak(nama: $nama, email: $email, alamat: $alamat, telepon: $telepon, foto: $foto)';
+    return 'Kontak(nama: $nama, email: $email, alamat: $alamat, noTelepon: $noTelepon, foto: $foto)';
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(covariant Kontak other) {
     if (identical(this, other)) return true;
 
-    return other is Kontak &&
-        other.nama == nama &&
+    return other.nama == nama &&
         other.email == email &&
         other.alamat == alamat &&
-        other.telepon == telepon &&
+        other.noTelepon == noTelepon &&
         other.foto == foto;
   }
 
@@ -78,7 +76,7 @@ class Kontak {
     return nama.hashCode ^
         email.hashCode ^
         alamat.hashCode ^
-        telepon.hashCode ^
+        noTelepon.hashCode ^
         foto.hashCode;
   }
 }
