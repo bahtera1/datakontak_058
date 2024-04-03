@@ -1,3 +1,6 @@
+import 'package:data_kontak/controller/kontak_controller.dart';
+import 'package:data_kontak/model/person_model.dart';
+import 'package:data_kontak/screen/hal_register.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
