@@ -19,10 +19,11 @@ class _HomeViewState extends State<HomeView> {
     _controller.getPeople();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Daftar Orang"),
+        title: Text('Daftar Orang'),
       ),
       body: FutureBuilder<List<Person>>(
         future: _controller.getPeople(),
