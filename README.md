@@ -12,4 +12,5 @@ Naufal Assani Saputra (20210140058)
 ![Screenshot 2024-04-28 221257](https://github.com/bahtera1/datakontak_058/assets/67119529/da3097e6-0802-4e51-87a1-bab3789ef28c)
 
 ### Halaman Awal
-![Uploading Screenshot 2024-04-28 221926.png…]()
+
+![Screenshot 2024-04-28 221926](https://github.com/bahtera1/datakontak_058/assets/67119529/52978ec9-24f0-481e-85d1-c1eed861f1ef)
